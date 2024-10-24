@@ -1,18 +1,18 @@
 // ====== USER PARAMS
 export type CreateUserParams = {
-  clerkId: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  photo: string;
+  clerkId: string | undefined;
+  firstName: string | undefined;
+  lastName: string | undefined;
+  username: string | undefined;
+  email: string | undefined;
+  photo: string | undefined;
 };
 
 export type UpdateUserParams = {
-  firstName: string;
-  lastName: string;
-  username: string;
-  photo: string;
+  firstName: string | undefined;
+  lastName: string | undefined;
+  username: string | undefined;
+  photo: string | undefined;
 };
 
 // ====== EVENT PARAMS
