@@ -14,7 +14,6 @@ import Event from "../database/models/event.model";
 import { ObjectId } from "mongodb";
 import User from "../database/models/user.model";
 
-//creating the order
 export const createOrder = async (order: CreateOrderParams) => {
   try {
     await connectToDatabase();
@@ -24,13 +23,14 @@ export const createOrder = async (order: CreateOrderParams) => {
       event: order.eventId,
       buyer: order.buyerId,
     });
+
     return JSON.parse(JSON.stringify(newOrder));
   } catch (error) {
     handleError(error);
   }
 };
 
-//get orders by event
+// GET ORDERS BY EVENT
 export async function getOrdersByEvent({
   searchString,
   eventId,
@@ -85,18 +85,19 @@ export async function getOrdersByEvent({
         },
       },
     ]);
+
     return JSON.parse(JSON.stringify(orders));
   } catch (error) {
     handleError(error);
   }
 }
 
-//get orders by user
+// GET ORDERS BY USER
 export async function getOrdersByUser({
   userId,
   limit = 3,
   page,
-}: GetOrdersByEventParams) {
+}: GetOrdersByUserParams) {
   try {
     await connectToDatabase();
 
